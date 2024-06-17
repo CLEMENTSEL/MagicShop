@@ -1,0 +1,45 @@
+CREATE DATABASE IF NOT EXISTS ECommerce;
+
+USE ECommerce;
+
+CREATE TABLE IF NOT EXISTS roles (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+INSERT INTO roles (name) VALUES("USER");
+INSERT INTO roles (name) VALUES("ADMIN");
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role_id INT NOT NULL,
+    CONSTRAINT fk_role_id FOREIGN KEY(role_id) REFERENCES roles(id) ON DELETE restrict ON UPDATE restrict
+);
+
+CREATE TABLE IF NOT EXISTS products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image VARCHAR(255),
+    item_name VARCHAR(255) NOT NULL UNIQUE,
+    description VARCHAR(255) NOT NULL,
+    price DECIMAL(15,2) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT,
+    created_at date not null DEFAULT (CURRENT_DATE)
+);
+
+CREATE TABLE IF NOT EXISTS currentOrders (
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP PRIMARY KEY,
+    product_id INT NOT NULL,
+    user_id INT NOT NULL,
+    quantity INT NOT NULL
+);

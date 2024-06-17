@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble My Tea - S'enregistrer</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <div class="wrapper">
+            
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+
+            <form method="post">
+            {% csrf_token %}
+                <h1>Créer un compte</h1>
+                <div class="input-box-register">
+                    <input type="text" name="username" placeholder="Username">
+                    <i class='bx bxs-id-card'></i>
+                </div>
+                <div class="input-box-register">
+                    <input type="text" name="firstname" placeholder="Prénom">
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box-register">
+                    <input type="text" name="lastname" placeholder="Nom">
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box-register">
+                    <input type="email" name="email"placeholder="Email">
+                    <i class='bx bx-envelope'></i>
+                </div>
+                <div class="input-box-register">
+                    <input type="password" name="password1" placeholder="Mot de passe">
+                    <i class='bx bxs-lock'></i>
+                </div>
+                <div class="input-box-register">
+                    <input type="password" name="password2" placeholder="Confirmer le mot de passe">
+                    <i class='bx bxs-lock'></i>
+                </div>
+                <div class="button">
+                    <button type="submit" class="btn">Créer</button>
+                </div>
+                <div class="register-link">
+                    <p>Vous avez déjà un compte ? <a href="/">Se connecter</a></p>
+                </div>
+        </div>
+
+        </form>
+        </div>
+    </main>
+</body>
+
+</html>

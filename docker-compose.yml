@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:latest
+    volumes:
+      - ./db_scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 10
+      start_period: 30s
+    environment:
+      MYSQL_DATABASE: ECommerce
+      MYSQL_USER: oui
+      MYSQL_PASSWORD: oui
+      MYSQL_ROOT_PASSWORD: oui
+
+  backend:
+    build: ./backend/
+    ports:
+      - "8000:8000"
+    depends_on:
+        db:
+          condition: service_healthy
+    environment:
+      - DATABASE_URL=mysql://oui:oui@db:3306/ECommerce
+
+  frontend:
+    build: ./frontend/
+    ports:
+      - "3000:3000"

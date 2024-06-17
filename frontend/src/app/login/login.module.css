@@ -1,0 +1,196 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+.formerrormessage {
+  font-size: 13px;
+}
+
+.body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-image: url("fondLoginRegister.png");
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.body .main {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.wrapper {
+  text-align: center;
+  width: 350px;
+  background-color: rgb(139, 148, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.wrapper .button {
+  padding: 10px 80px;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.wrapper .registerlink {
+  font-size: 14, 5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.registerlink p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.registerlink p a :hover {
+  text-decoration: underline;
+}
+
+.registerlink p a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+.registerlink p a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.registerlink p a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+/* // REGISTER // */
+
+.wrapper .inputboxregister {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 20px 0;
+}
+
+.inputboxregister .formerrormessage {
+  position: absolute;
+  left: 10%;
+}
+
+.inputboxregister .input {
+  height: 5%;
+  width: 69%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
+}
+
+.inputboxregister .input::placeholder {
+  color: #fff;
+}
+
+.inputboxregister i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-58%);
+  font-size: 20px;
+}
+
+.buttoncontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 5%;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.buttoncontent {
+  position: relative;
+  z-index: 1;
+  font-style: bold;
+  font-size: 16px;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(82.3deg,
+      rgba(150, 93, 233, 1) 10.8%,
+      rgba(99, 88, 238, 1) 94.3%);
+  transition: all 0.475s;
+}
+
+.input {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  font-size: .8vw;
+  color: #ffffff;
+  background-color: rgb(28, 28, 30);
+  box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 0.4vw;
+  max-width: 100%;
+  transition: .4s;
+  text-align: left;
+}
+
+.input:hover {
+  box-shadow: 0 0 0 .15vw rgba(189, 74, 255, 0.186);
+}
+
+.input:focus {
+  box-shadow: 0 0 0 .15vw rgb(162, 172, 255);
+}

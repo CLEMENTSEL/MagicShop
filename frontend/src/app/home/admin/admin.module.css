@@ -1,0 +1,542 @@
+/* -------------------------------- product card --------------------------------- */
+
+#cardProduct {
+    max-width: 50%;
+}
+/* before adding the img to the div with the 
+"card-img" class, remove css styles 
+.card-img .img::before and .card-img .img::after,
+then set the desired styles for .card-img. */
+.card {
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #fff;
+    --main-color: #323232;
+    --main-focus: #2d8cf0;
+    width: 230px;
+    height: 300px;
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card:last-child {
+    justify-content: flex-end;
+}
+
+.cardimg {
+    /* clear and add new css */
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+}
+
+/* .cardimg .img::before {
+    /* delete 
+    content: '';
+    position: absolute;
+    width: 65px;
+    height: 110px;
+    margin-left: -32.5px;
+    left: 50%;
+    bottom: -4px;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.7) 30%, transparent 30%), linear-gradient(to top, transparent 17px, rgba(0, 0, 0, 0.3) 17px, rgba(0, 0, 0, 0.3) 20px, transparent 20px), linear-gradient(to right, black 2px, transparent 2px), linear-gradient(to left, black 2px, transparent 2px), linear-gradient(to top, black 2px, #228b22 2px);
+    background-size: 60% 10%, 100% 100%, 100% 65%, 100% 65%, 100% 50%;
+    background-position: center 3px, center bottom, center bottom, center bottom, center bottom;
+    border-radius: 0 0 4px 4px;
+    z-index: 2;
+}
+
+.cardimg .img::after {
+    /* delete 
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    width: 28px;
+    height: 28px;
+    margin-left: -14px;
+    left: 50%;
+    top: -13px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(80deg, #ffc0cb 45%, transparent 45%), linear-gradient(-175deg, #ffc0cb 45%, transparent 45%), linear-gradient(80deg, rgba(0, 0, 0, 0.2) 51%, rgba(0, 0, 0, 0) 51%), linear-gradient(-175deg, rgba(0, 0, 0, 0.2) 51%, rgba(0, 0, 0, 0) 51%), radial-gradient(circle at center, #ffa6b6 45%, rgba(0, 0, 0, 0.2) 45%, rgba(0, 0, 0, 0.2) 52%, rgba(0, 0, 0, 0) 52%), linear-gradient(45deg, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, 0.2) 48%, rgba(0, 0, 0, 0.2) 52%, rgba(0, 0, 0, 0) 52%), linear-gradient(65deg, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, 0.2) 48%, rgba(0, 0, 0, 0.2) 52%, rgba(0, 0, 0, 0) 52%), linear-gradient(22deg, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, 0.2) 48%, rgba(0, 0, 0, 0.2) 54%, rgba(0, 0, 0, 0) 54%);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 75%, 100% 95%, 100% 60%;
+    background-position: center center;
+    border-top-left-radius: 120px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 70px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    transform: rotate(45deg);
+    z-index: 1;
+} */
+
+.cardtitle {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--font-color);
+}
+
+.cardsubtitle {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--font-color-sub);
+}
+
+.carddivider {
+    width: 100%;
+    border: 1px solid var(--main-color);
+    border-radius: 50px;
+}
+
+.cardfooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardprice {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--font-color);
+}
+
+.cardprice span {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--font-color-sub);
+}
+
+.cardbtn {
+    height: 35px;
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    padding: 0 15px;
+    transition: all 0.3s;
+}
+
+.cardbtn svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--main-color);
+    transition: all 0.3s;
+}
+
+.cardimg:hover {
+    transform: translateY(-3px);
+}
+
+.cardbtn:hover {
+    border: 2px solid var(--main-focus);
+}
+
+.cardbtn:hover svg {
+    fill: var(--main-focus);
+}
+
+.cardbtn:active {
+    transform: translateY(3px);
+}
+
+/* ----------------------------------------------- end product card ----------------------------------- */
+
+
+
+/* ---------------------------------------------------- formik ----------------------------------------------- */
+
+/* register input*/
+.wrapper .inputboxregisterDESC {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin: 20px 0;
+}
+
+.inputboxregisterDESC .formerrormessage {
+    position: absolute;
+    left: 10%;
+}
+
+.inputboxregisterDESC .input {
+    height: 20%;
+    width: 69%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 2);
+    border-radius: 20px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 80px 20px;
+}
+
+.inputboxregisterDESC .input::placeholder {
+    color: #fff;
+}
+
+.inputboxregisterDESC i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-58%);
+    font-size: 20px;
+}
+
+/*end register input*/
+
+
+.formerrormessage {
+    font-size: 13px;
+}
+
+.wrapper {
+    text-align: center;
+    width: 450px;
+    background-color: rgb(139, 148, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper .button {
+    padding: 10px 80px;
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper .registerlink {
+    font-size: 14, 5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.registerlink p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.registerlink p a :hover {
+    text-decoration: underline;
+}
+
+.registerlink p a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+.registerlink p a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.registerlink p a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+/* // REGISTER // */
+
+.wrapper .inputboxregister {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+}
+
+.inputboxregister .formerrormessage {
+    position: absolute;
+    left: 10%;
+}
+
+.inputboxregister .input {
+    height: 5%;
+    width: 69%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.inputboxregister .input::placeholder {
+    color: #fff;
+}
+
+.inputboxregister i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-58%);
+    font-size: 20px;
+}
+
+.buttoncontainer {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #3d3a4e;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 5%;
+}
+
+.button:hover::before {
+    transform: scaleX(1);
+}
+
+.buttoncontent {
+    position: relative;
+    z-index: 1;
+    font-style: bold;
+    font-size: 16px;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(82.3deg,
+            rgba(150, 93, 233, 1) 10.8%,
+            rgba(99, 88, 238, 1) 94.3%);
+    transition: all 0.475s;
+}
+
+.input {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    font-size: .8vw;
+    color: #ffffff;
+    background-color: rgb(28, 28, 30);
+    box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+    border-radius: 0.4vw;
+    border: none;
+    outline: none;
+    padding: 0.4vw;
+    /* max-width: 100%; */
+    transition: .4s;
+    text-align: left;
+}
+
+.input:hover {
+    box-shadow: 0 0 0 .15vw rgba(189, 74, 255, 0.186);
+}
+
+.input:focus {
+    box-shadow: 0 0 0 .15vw rgb(162, 172, 255);
+}
+
+/* ----------------------------------------------------- end formik -----------------------------------------  */
+
+/* ----------------------------------------------------- shop button -----------------------------------------  */
+.shopbutton {
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: hsl(255deg 50% 40%);
+    font-family: inherit;
+}
+
+.shopbutton .defaultbtn,
+.hoverbtn {
+    background-color: hsl(255deg 50% 40%);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    /* font-size: 14px; */
+    font-weight: 500;
+    /* text-transform: uppercase; */
+    transition: all .3s ease;
+}
+
+.shopbutton .hoverbtn {
+    position: absolute;
+    inset: 0;
+    background-color: hsl(255deg 50% 49%);
+    transform: translate(0%, 100%);
+}
+
+.shopbutton .defaultbtn span {
+    color: hsl(0, 0%, 100%);
+}
+
+.shopbutton .hoverbtn span {
+    color: hsl(0, 0%, 100%);
+}
+
+/* ----------------------------------------------------- end shop button -----------------------------------------  */
+
+
+/* ----------------------------------------------------- profile button -----------------------------------------  */
+.Btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100px;
+    height: 30px;
+    border: none;
+    padding: 0px 20px;
+    background-color: hsl(255deg 50% 40%);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 12px;
+    /*box-shadow: 5px 5px 0px rgb(140, 32, 212);*/
+    transition-duration: .3s;
+}
+
+.svg {
+    width: 13px;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    fill: white;
+    transition-duration: .3s;
+}
+
+.Btn:hover {
+    color: transparent;
+    background-color: hsl(255deg 50% 49%);
+}
+
+.Btn:hover svg {
+    right: 43%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    transition-duration: .3s;
+    background-color: hsl(255deg 50% 49%);
+}
+
+.Btn:active {
+    transform: translate(3px, 3px);
+    transition-duration: .3s;
+    box-shadow: 2px 2px 0px hsl(255deg 50% 49%);
+}
+/* ----------------------------------------------------- end profile button -----------------------------------------  */
+
+/* ----------------------------------------------------- LOGOUT button -----------------------------------------  */
+.BtnL {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: hsl(255deg 50% 40%);
+}
+
+/* plus sign */
+.signL {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signL svg {
+    width: 17px;
+}
+
+.signL svg path {
+    fill: white;
+}
+
+/* text */
+.textL {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    /* font-size: 1.2em; */
+    /* font-weight: 600; */
+    transition-duration: .3s;
+}
+
+/* hover effect on button width */
+.BtnL:hover {
+    width: 160px;
+    border-radius: 12px;
+    transition-duration: .3s;
+    background-color: hsl(255deg 50% 49%);
+}
+
+.BtnL:hover .signL {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+}
+
+/* hover effect button's text */
+.BtnL:hover .textL {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+}
+
+/* button click effect*/
+.BtnL:active {
+    transform: translate(2px, 2px);
+}
+/* ----------------------------------------------------- END LOGOUT button -----------------------------------------  */
