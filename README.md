@@ -1,2 +1,2 @@
 # MagicShop
-Site de vente d'objets magiques, API en DJANGO, front en NextJS avec une database MYSQL
+NextJS, Django, MariaDB - E-Commerce shop on the theme of ✨Magic 🔮
